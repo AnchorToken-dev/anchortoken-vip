@@ -56,7 +56,7 @@ export const solana = {
   status: "live" as const,
   statusLabel: "LIVE",
   statusDetail:
-    "Launched Sept 6 via Pump.fun · 100% fair bonding curve · still advertising",
+    "Launched Sept 6, 2026 via Pump.fun · 100% fair bonding curve · still advertising",
   chain: "Solana",
   venue: "Pump.fun",
   contract: "3jhApg98ukHe2EZFDsZ92J2KhMuMY5CW3NpCdt5spump",
@@ -66,7 +66,7 @@ export const solana = {
     "https://solscan.io/token/3jhApg98ukHe2EZFDsZ92J2KhMuMY5CW3NpCdt5spump",
   totalSupply: "1,000,000,000",
   decimals: "6",
-  launched: "Sept 6, 2025",
+  launched: "Sept 6, 2026",
   facts: [
     { label: "Token Name", value: "Anchor" },
     { label: "Blockchain", value: "Solana" },
