@@ -155,9 +155,11 @@ function SolanaPage() {
         </SectionTitle>
         <div className="mt-6 flex flex-wrap gap-2">
           <OutLink href={socials.discord}>Join Discord</OutLink>
-          <OutLink href={socials.x} variant="ghost">
-            Follow on X
-          </OutLink>
+          {socials.x.map((account) => (
+            <OutLink key={account.handle} href={account.url} variant="ghost">
+              Follow {account.handle}
+            </OutLink>
+          ))}
         </div>
       </section>
 
