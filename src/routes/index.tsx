@@ -54,9 +54,11 @@ function Home() {
           <p className="mt-3 max-w-xl text-muted">{robinhood.statusDetail}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             <OutLink href={socials.discord}>Join Discord</OutLink>
-            <OutLink href={socials.x} variant="ghost">
-              Follow on X
-            </OutLink>
+            {socials.x.map((account) => (
+              <OutLink key={account.handle} href={account.url} variant="ghost">
+                Follow {account.handle}
+              </OutLink>
+            ))}
             <Link
               to="/solana"
               className="inline-flex min-h-11 items-center border border-line bg-surface px-4 text-sm font-semibold text-muted hover:border-neon hover:text-fg"

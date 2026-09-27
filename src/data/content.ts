@@ -8,8 +8,11 @@ export const brand = {
 } as const;
 
 export const socials = {
-  discord: "https://discord.gg/8U9UycsDH",
-  x: "https://x.com/Draco4226",
+  discord: "https://discord.gg/UdJPfnHQ",
+  x: [
+    { handle: "@Draco4226", url: "https://x.com/Draco4226" },
+    { handle: "@Memecoindev46", url: "https://x.com/Memecoindev46" },
+  ],
   /** Telegram is not an official channel — scammers impersonate there. */
   telegram: null as string | null,
 } as const;
@@ -152,6 +155,6 @@ export const faqs = [
   },
   {
     q: "How do I know a Telegram / Discord DM is not the dev?",
-    a: "Official talk is X (@Draco4226) and the Discord linked on this site. Telegram is not an official Anchor channel — anyone claiming to be the creator there is a scammer.",
+    a: "Official talk is X (@Draco4226 and @Memecoindev46) and the Discord linked on this site. Telegram is not an official Anchor channel — anyone claiming to be the creator there is a scammer.",
   },
 ] as const;

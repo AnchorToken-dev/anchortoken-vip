@@ -76,14 +76,17 @@ export function Shell({ children }: { children: ReactNode }) {
             >
               Discord
             </a>
-            <a
-              href={socials.x}
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold text-fg hover:text-neon"
-            >
-              X / @Draco4226
-            </a>
+            {socials.x.map((account) => (
+              <a
+                key={account.handle}
+                href={account.url}
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-fg hover:text-neon"
+              >
+                X / {account.handle}
+              </a>
+            ))}
           </div>
         </div>
       </footer>
@@ -182,7 +185,7 @@ export function TelegramCallout() {
             Telegram is not us
           </h2>
           <p className="mt-2 text-muted">
-            Official talk is X (@Draco4226) and the Discord linked on this site.
+            Official talk is X (@Draco4226 and @Memecoindev46) and the Discord linked on this site.
             Anyone claiming to be the Anchor creator on Telegram is a scammer.
             Check this site before you trust a message or a contract address.
           </p>
