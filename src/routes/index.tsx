@@ -69,7 +69,7 @@ function Home() {
         </div>
         <figure className="justify-self-center lg:justify-self-end">
           <img
-            src="/logo.svg"
+            src="/anchor-coin.png"
             alt="Anchor Token logo"
             width={192}
             height={192}

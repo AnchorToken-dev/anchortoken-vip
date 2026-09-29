@@ -24,7 +24,7 @@ export function Shell({ children }: { children: ReactNode }) {
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="group flex items-center gap-3">
               <img
-                src="/logo.svg"
+                src="/anchor-coin.png"
                 alt=""
                 width={40}
                 height={40}

@@ -26,7 +26,8 @@ export const Route = createRootRoute({
       { property: "og:url", content: "https://anchortoken.vip" },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/png", href: "/anchor-coin.png" },
+      { rel: "apple-touch-icon", href: "/anchor-coin.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
