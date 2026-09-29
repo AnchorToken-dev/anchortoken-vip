@@ -28,7 +28,7 @@ export function Shell({ children }: { children: ReactNode }) {
                 alt=""
                 width={40}
                 height={40}
-                className="size-10 shrink-0 aspect-square object-contain drop-shadow-[0_0_8px_rgba(0,255,102,0.55)]"
+                className="size-14 shrink-0 aspect-square object-contain drop-shadow-[0_0_8px_rgba(0,255,102,0.55)]"
               />
               <span className="font-display text-2xl tracking-wide text-neon [text-shadow:0_0_12px_rgba(0,255,102,0.45)]">
                 {brand.name.toUpperCase()}
