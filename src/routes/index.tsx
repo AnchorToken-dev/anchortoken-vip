@@ -67,13 +67,13 @@ function Home() {
             </Link>
           </div>
         </div>
-        <figure className="justify-self-center lg:justify-self-end">
+        <figure className="w-fit justify-self-center lg:justify-self-end">
           <img
             src="/anchor-coin.png"
             alt="Anchor Token logo"
             width={192}
             height={192}
-            className="size-48 drop-shadow-[0_0_24px_rgba(0,255,102,0.4)]"
+            className="size-48 shrink-0 aspect-square object-contain max-w-full drop-shadow-[0_0_24px_rgba(0,255,102,0.4)]"
           />
         </figure>
       </section>
