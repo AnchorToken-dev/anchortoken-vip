@@ -21,14 +21,14 @@ export function Shell({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-5 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <Link to="/" className="group flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <Link to="/" className="group flex shrink-0 items-center gap-3">
               <img
                 src="/anchor-coin.png"
                 alt=""
                 width={40}
                 height={40}
-                className="size-10 drop-shadow-[0_0_8px_rgba(0,255,102,0.55)]"
+                className="size-10 shrink-0 aspect-square object-contain drop-shadow-[0_0_8px_rgba(0,255,102,0.55)]"
               />
               <span className="font-display text-2xl tracking-wide text-neon [text-shadow:0_0_12px_rgba(0,255,102,0.45)]">
                 {brand.name.toUpperCase()}
