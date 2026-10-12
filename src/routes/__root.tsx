@@ -13,14 +13,14 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Official Anchor Token site. Robinhood-chain primary launch coming soon. Solana / Pump.fun track live with zero dev allocation.",
+          "Official Anchor Token ($ANCHOR) site. Live on Solana via Pump.fun with zero dev allocation. Holder members area, Anchor Desk and Rug Check.",
       },
       { name: "theme-color", content: "#05070a" },
       { property: "og:title", content: "Anchor Token · Official" },
       {
         property: "og:description",
         content:
-          "Zero-dev allocation. Robinhood-chain primary (coming soon) + Solana Pump.fun track.",
+          "Zero-dev allocation. Official $ANCHOR on Solana (Pump.fun), plus holder tools: members area, Anchor Desk, Rug Check.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://anchortoken.vip" },

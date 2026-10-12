@@ -1,16 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  contactEmail,
   faqs,
+  MEMBERS_MIN,
   robinhood,
   rules,
   socials,
+  solana,
+  tools,
   wallets,
 } from "@/data/content";
 import {
   ComingSoonBanner,
+  CopyButton,
   Kicker,
   OutLink,
-  PlaceholderBox,
   SectionTitle,
   StatusBadge,
   TelegramCallout,
@@ -22,8 +26,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Anchor Token · Robinhood-chain launch (coming soon) · Official",
+        title: "Anchor Token ($ANCHOR) · Official · Live on Solana",
       },
     ],
   }),
@@ -39,8 +42,8 @@ function Home() {
       <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <div>
           <div className="flex flex-wrap items-center gap-3">
-            <Kicker>Primary launch · Robinhood chain</Kicker>
-            <StatusBadge live={false} label={robinhood.statusLabel} />
+            <Kicker>Official $ANCHOR · Solana</Kicker>
+            <StatusBadge live label={solana.statusLabel} />
           </div>
           <h1 className="mt-3 font-display text-6xl tracking-wide text-fg">
             <span className="bg-gradient-to-b from-fg to-neon bg-clip-text text-transparent">
@@ -48,12 +51,15 @@ function Home() {
             </span>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-fg">
-            Official anti-rug launch on Robinhood chain. Zero dev allocation.
-            Same rules as the Solana track — just not live yet.
+            Official anti-rug token, live on Solana via Pump.fun. Zero dev
+            allocation. Holders get the members area and Anchor Desk.
           </p>
-          <p className="mt-3 max-w-xl text-muted">{robinhood.statusDetail}</p>
+          <p className="mt-3 max-w-xl text-muted">{solana.statusDetail}</p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <OutLink href={socials.discord}>Join Discord</OutLink>
+            <OutLink href={solana.pumpUrl}>Buy on Pump.fun</OutLink>
+            <OutLink href={socials.discord} variant="ghost">
+              Join Discord
+            </OutLink>
             {socials.x.map((account) => (
               <OutLink key={account.handle} href={account.url} variant="ghost">
                 Follow {account.handle}
@@ -63,7 +69,7 @@ function Home() {
               to="/solana"
               className="inline-flex min-h-11 items-center border border-line bg-surface px-4 text-sm font-semibold text-muted hover:border-neon hover:text-fg"
             >
-              Solana / Pump.fun track →
+              Token details →
             </Link>
           </div>
         </div>
@@ -78,26 +84,57 @@ function Home() {
         </figure>
       </section>
 
-      <ComingSoonBanner>
-        The Robinhood-chain contract is not published yet. Do not buy any token
-        claiming to be Anchor on Robinhood until the address appears on this
-        page. Meanwhile the Solana Pump.fun Anchor remains live and advertised.
-      </ComingSoonBanner>
+      <section>
+        <SectionTitle kicker="Contract" title="Official contract address">
+          The only official $ANCHOR. Copy it from this site, nowhere else.
+        </SectionTitle>
+        <div className="mt-6 border border-neon/30 bg-surface p-5">
+          <p className="text-xs font-semibold tracking-widest text-neon uppercase">
+            {solana.venue} · {solana.chain}
+          </p>
+          <p className="mt-3 font-mono text-sm break-all text-fg sm:text-base">
+            {solana.contract}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <CopyButton value={solana.contract} label="Copy CA" />
+            <OutLink href={solana.pumpUrl} variant="ghost">
+              Pump.fun
+            </OutLink>
+            <OutLink href={solana.solscanUrl} variant="ghost">
+              Solscan
+            </OutLink>
+          </div>
+        </div>
+      </section>
 
       <TelegramCallout />
 
       <section>
-        <SectionTitle kicker="Contract" title="Robinhood contract address">
-          Empty until launch. Mark will paste the CA here the moment it is live.
+        <SectionTitle kicker="Holder tools" title="What holding gets you">
+          Hold at least {MEMBERS_MIN} and sign in with your Solana wallet. One
+          free signed message, no transaction, never your seed phrase.
         </SectionTitle>
-        <div className="mt-6">
-          <PlaceholderBox title="Robinhood CA — TBD">
-            <p>
-              Venue: {robinhood.venue}. Supply / decimals:{" "}
-              {robinhood.totalSupply} / {robinhood.decimals}.
-            </p>
-            <p className="mt-2">{robinhood.launchNote}</p>
-          </PlaceholderBox>
+        <div className="mt-6 grid gap-px border border-line bg-line md:grid-cols-3">
+          {tools.map((tool) => (
+            <a
+              key={tool.key}
+              href={tool.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex flex-col bg-surface p-5 hover:bg-surface-2"
+            >
+              <p className="text-xs font-semibold tracking-widest text-neon uppercase">
+                {tool.kicker}
+              </p>
+              <h3 className="mt-2 font-display text-2xl tracking-wide text-fg">
+                {tool.title}
+              </h3>
+              <p className="mt-2 flex-1 text-muted">{tool.body}</p>
+              <p className="mt-4 text-sm font-semibold break-all text-neon group-hover:underline">
+                {tool.host} →
+              </p>
+            </a>
+          ))}
         </div>
       </section>
 
@@ -120,9 +157,14 @@ function Home() {
         </ol>
       </section>
 
+      <ComingSoonBanner>
+        {robinhood.statusDetail} {robinhood.launchNote}
+      </ComingSoonBanner>
+
       <section>
         <SectionTitle kicker="Wallets" title="Robinhood / EVM wallets">
-          Confirm before launch. Placeholder addresses are marked.
+          For a possible Robinhood Chain launch. Placeholder addresses are
+          marked.
         </SectionTitle>
         <div className="mt-6">
           <WalletList groups={robinhoodWallets} />
@@ -131,7 +173,7 @@ function Home() {
 
       <section>
         <SectionTitle kicker="FAQ" title="Straight answers">
-          More detail lives on the Solana page for the live Pump.fun track.
+          More token detail lives on the Solana page.
         </SectionTitle>
         <dl className="mt-6 divide-y divide-line border border-line bg-surface">
           {faqs.map((item) => (
@@ -143,6 +185,15 @@ function Home() {
             </div>
           ))}
         </dl>
+        <p className="mt-4 text-sm text-muted">
+          Having issues? Email{" "}
+          <a
+            href={`mailto:${contactEmail}`}
+            className="font-semibold break-all text-fg hover:text-neon"
+          >
+            {contactEmail}
+          </a>
+        </p>
       </section>
     </div>
   );

@@ -32,7 +32,7 @@ function SolanaPage() {
     <div className="flex flex-col gap-14">
       <section>
         <div className="flex flex-wrap items-center gap-3">
-          <Kicker>Secondary track · Solana</Kicker>
+          <Kicker>Official $ANCHOR · Solana</Kicker>
           <StatusBadge live label={solana.statusLabel} />
         </div>
         <h1 className="mt-3 font-display text-5xl tracking-wide text-fg sm:text-6xl">
@@ -41,8 +41,7 @@ function SolanaPage() {
         <p className="mt-4 max-w-2xl text-lg text-fg">{solana.statusDetail}</p>
         <p className="mt-3 max-w-2xl text-muted">
           Zero dev allocations. Zero insider snipes. Deployed via standard
-          Pump.fun protocol tools. Still advertising while the Robinhood-chain
-          primary launch is prepared.
+          Pump.fun protocol tools. This is the only official $ANCHOR.
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
           <OutLink href={solana.pumpUrl}>Open on Pump.fun</OutLink>
@@ -53,7 +52,7 @@ function SolanaPage() {
             to="/"
             className="inline-flex min-h-11 items-center border border-line bg-surface px-4 text-sm font-semibold text-muted hover:border-neon hover:text-fg"
           >
-            ← Robinhood primary
+            ← Home
           </Link>
         </div>
       </section>
