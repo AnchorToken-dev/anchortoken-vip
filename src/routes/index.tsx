@@ -8,7 +8,6 @@ import {
   socials,
   solana,
   tools,
-  wallets,
 } from "@/data/content";
 import {
   ComingSoonBanner,
@@ -18,7 +17,6 @@ import {
   SectionTitle,
   StatusBadge,
   TelegramCallout,
-  WalletList,
 } from "@/components/shell";
 
 export const Route = createFileRoute("/")({
@@ -33,10 +31,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const robinhoodWallets = wallets.filter((g) =>
-    g.name.toLowerCase().includes("robinhood"),
-  );
-
   return (
     <div className="flex flex-col gap-14">
       <section className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem]">
@@ -160,16 +154,6 @@ function Home() {
       <ComingSoonBanner>
         {robinhood.statusDetail} {robinhood.launchNote}
       </ComingSoonBanner>
-
-      <section>
-        <SectionTitle kicker="Wallets" title="Robinhood / EVM wallets">
-          For a possible Robinhood Chain launch. Placeholder addresses are
-          marked.
-        </SectionTitle>
-        <div className="mt-6">
-          <WalletList groups={robinhoodWallets} />
-        </div>
-      </section>
 
       <section>
         <SectionTitle kicker="FAQ" title="Straight answers">

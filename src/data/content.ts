@@ -133,8 +133,7 @@ export type WalletGroup = {
 const solscan = (address: string) => `https://solscan.io/account/${address}`;
 
 /**
- * Wallets pulled from Memecoindev where shared; Robinhood entries marked
- * placeholder until Mark confirms they apply to Anchor Token specifically.
+ * Official Solana wallets for the $ANCHOR Pump.fun track.
  */
 export const wallets: WalletGroup[] = [
   {
@@ -155,18 +154,6 @@ export const wallets: WalletGroup[] = [
         chain: "SOL",
         address: "CzV52d371a6VRCkfV7jdPNtT5Tdkpty4Yn1pskCdk4Ki",
         explorer: solscan("CzV52d371a6VRCkfV7jdPNtT5Tdkpty4Yn1pskCdk4Ki"),
-      },
-    ],
-  },
-  {
-    name: "Robinhood / Gekko (EVM)",
-    detail:
-      "PLACEHOLDER — confirm this is the Anchor Robinhood-chain wallet before launch.",
-    lines: [
-      {
-        chain: "EVM",
-        address: "0x4743Ff4b528A1861e26f4d6016b3EFB72e8C6Df3",
-        placeholder: true,
       },
     ],
   },
