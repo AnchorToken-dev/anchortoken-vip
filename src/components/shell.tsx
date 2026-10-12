@@ -8,11 +8,11 @@ import {
   ShieldAlert,
   Clock,
 } from "lucide-react";
-import { brand, socials } from "@/data/content";
+import { brand, contactEmail, socials } from "@/data/content";
 import type { WalletGroup } from "@/data/content";
 
 const nav = [
-  { to: "/", label: "Robinhood", primary: true },
+  { to: "/", label: "Home", primary: true },
   { to: "/solana", label: "Solana", primary: false },
 ] as const;
 
@@ -35,8 +35,8 @@ export function Shell({ children }: { children: ReactNode }) {
               </span>
             </Link>
             <div className="flex flex-wrap items-center gap-2">
-              <ChainPill to="/" label="Robinhood" tone="primary" />
-              <ChainPill to="/solana" label="Solana" tone="muted" />
+              <ChainPill to="/solana" label="Solana · Live" tone="primary" />
+              <ChainPill to="/" label="Robinhood · not yet" tone="muted" />
             </div>
           </div>
           <nav className="flex gap-2" aria-label="Pages">
@@ -66,6 +66,15 @@ export function Shell({ children }: { children: ReactNode }) {
           <p>
             Official site · {brand.domain}. If it is not linked here, it is not
             us.
+          </p>
+          <p>
+            Having issues? Email{" "}
+            <a
+              href={`mailto:${contactEmail}`}
+              className="font-semibold break-all text-fg hover:text-neon"
+            >
+              {contactEmail}
+            </a>
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -202,7 +211,7 @@ export function ComingSoonBanner({ children }: { children: ReactNode }) {
         <Clock className="mt-0.5 size-5 shrink-0 text-amber" aria-hidden="true" />
         <div>
           <h2 className="font-display text-2xl tracking-wide text-fg">
-            Coming soon — not launching for a while
+            Not on Robinhood Chain yet
           </h2>
           <p className="mt-2 text-muted">{children}</p>
         </div>

@@ -7,6 +7,38 @@ export const brand = {
   tagline: "Zero-dev allocation. Stay anchored.",
 } as const;
 
+/** Contact for holders who are stuck (sign-in, desk, Rug Check). */
+export const contactEmail = "memecoindev@mail.grokbot.com";
+
+/** Holder tools on memecoindev.vip. */
+export const MEMBERS_MIN = "500,000 $ANCHOR";
+export const tools = [
+  {
+    key: "members",
+    kicker: "Holders only",
+    title: "Members area",
+    url: "https://memecoindev.vip/members",
+    host: "memecoindev.vip/members",
+    body: "Sign in with your Solana wallet (one free signed message, no transaction). Hold at least 500,000 $ANCHOR to get in: early tools and notes before they go public.",
+  },
+  {
+    key: "desk",
+    kicker: "Holders only",
+    title: "Anchor Desk",
+    url: "https://desk.memecoindev.vip",
+    host: "desk.memecoindev.vip",
+    body: "A clean trading desk: live scanner with risk grades, Quick Buy/Sell via Jupiter (you sign every trade), limit orders, wallet watch alerts for dev dumps and pulled liquidity, and a trade journal with P&L.",
+  },
+  {
+    key: "rugcheck",
+    kicker: "Free for everyone",
+    title: "Rug Check",
+    url: "https://rugcheck.memecoindev.vip",
+    host: "rugcheck.memecoindev.vip",
+    body: "Paste a contract address and get an A–F risk grade from automated contract checks before you trust a coin.",
+  },
+] as const;
+
 export const socials = {
   discord: "https://discord.gg/UdJPfnHQ",
   x: [
@@ -36,30 +68,30 @@ export const rules = [
   },
 ] as const;
 
-/** Robinhood-chain primary launch — coming soon, not launching for a while. */
+/** Robinhood Chain is live, but $ANCHOR is not on it yet. */
 export const robinhood = {
-  status: "coming_soon" as const,
-  statusLabel: "Coming soon",
+  status: "not_on_chain" as const,
+  statusLabel: "Not on Robinhood Chain yet",
   statusDetail:
-    "Primary launch track on Robinhood chain. Not launching for a while — watch this page and official socials for the contract.",
-  chain: "Robinhood chain",
+    "Robinhood Chain is live. $ANCHOR is not on it yet. If that changes, the contract will appear on this page first.",
+  chain: "Robinhood Chain",
   venue: "TBD",
-  /** PLACEHOLDER — Mark fills when ready */
+  /** PLACEHOLDER: Mark fills if/when $ANCHOR launches there */
   contract: null as string | null,
   contractExplorer: null as string | null,
   tradeUrl: null as string | null,
   totalSupply: "TBD",
   decimals: "TBD",
   launchNote:
-    "When live, the contract address will appear here and on Solana we will keep advertising the Pump.fun track separately.",
+    "Until an address is posted here, any token calling itself Anchor on Robinhood Chain is not us.",
 };
 
-/** Solana / Pump.fun secondary track — live, still advertising. */
+/** Solana / Pump.fun: the live, official $ANCHOR. */
 export const solana = {
   status: "live" as const,
   statusLabel: "LIVE",
   statusDetail:
-    "Launched Sept 6, 2026 via Pump.fun · 100% fair bonding curve · still advertising",
+    "Launched Sept 6, 2026 via Pump.fun · 100% fair bonding curve",
   chain: "Solana",
   venue: "Pump.fun",
   contract: "3jhApg98ukHe2EZFDsZ92J2KhMuMY5CW3NpCdt5spump",
@@ -101,8 +133,7 @@ export type WalletGroup = {
 const solscan = (address: string) => `https://solscan.io/account/${address}`;
 
 /**
- * Wallets pulled from Memecoindev where shared; Robinhood entries marked
- * placeholder until Mark confirms they apply to Anchor Token specifically.
+ * Official Solana wallets for the $ANCHOR Pump.fun track.
  */
 export const wallets: WalletGroup[] = [
   {
@@ -126,35 +157,31 @@ export const wallets: WalletGroup[] = [
       },
     ],
   },
-  {
-    name: "Robinhood / Gekko (EVM)",
-    detail:
-      "PLACEHOLDER — confirm this is the Anchor Robinhood-chain wallet before launch.",
-    lines: [
-      {
-        chain: "EVM",
-        address: "0x4743Ff4b528A1861e26f4d6016b3EFB72e8C6Df3",
-        placeholder: true,
-      },
-    ],
-  },
 ];
 
 export const faqs = [
   {
-    q: "When does the Robinhood-chain Anchor launch?",
-    a: "Not for a while. This site will show the contract the moment it is live. Do not trust any CA posted elsewhere.",
+    q: "What is the official $ANCHOR contract?",
+    a: "Solana: 3jhApg98ukHe2EZFDsZ92J2KhMuMY5CW3NpCdt5spump, launched Sept 6 via Pump.fun with 0% dev allocation. That is the only official $ANCHOR. Copy it from this site.",
   },
   {
-    q: "Is the Solana Pump.fun Anchor still real?",
-    a: "Yes. It launched Sept 6 via Pump.fun with 0% dev allocation. Contract is listed on the Solana page. We keep advertising that track while the Robinhood primary launch is prepared.",
+    q: "Is $ANCHOR on Robinhood Chain?",
+    a: "Not yet. Robinhood Chain is live, but $ANCHOR has not launched there. If it does, the contract will appear on this site first. Do not trust any Robinhood CA posted elsewhere.",
+  },
+  {
+    q: "How do I get into the members area and Anchor Desk?",
+    a: "Hold at least 500,000 $ANCHOR in a Solana wallet, open memecoindev.vip/members or desk.memecoindev.vip and sign in with your wallet. Signing in is one free message: no transaction, and we never ask for your seed phrase.",
   },
   {
     q: "What are the token transaction taxes?",
-    a: "0% tax on the Solana Pump.fun track (standard Solana DEX / Pump.fun rules). Robinhood-chain tax posture will be stated at launch.",
+    a: "0% tax (standard Solana DEX / Pump.fun rules).",
   },
   {
     q: "How do I know a Telegram / Discord DM is not the dev?",
     a: "Official talk is X (@Draco4226 and @Memecoindev46) and the Discord linked on this site. Telegram is not an official Anchor channel — anyone claiming to be the creator there is a scammer.",
+  },
+  {
+    q: "Something isn't working. Who do I contact?",
+    a: "Email memecoindev@mail.grokbot.com.",
   },
 ] as const;
