@@ -10,6 +10,16 @@ export const brand = {
 /** Contact for holders who are stuck (sign-in, desk, Rug Check). */
 export const contactEmail = "memecoindev@mail.grokbot.com";
 
+/** Named on the Terms of Use and Privacy Policy. */
+export const operator = {
+  name: "Mark Burnett II",
+  org: "MemecoinDev",
+  site: "https://memecoindev.vip",
+  location: "Georgia, USA",
+} as const;
+
+export const legalEffectiveDate = "October 25, 2026";
+
 /** Holder tools on memecoindev.vip. */
 export const MEMBERS_MIN = "500,000 $ANCHOR";
 export const tools = [
