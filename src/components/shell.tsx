@@ -16,6 +16,11 @@ const nav = [
   { to: "/solana", label: "Solana", primary: false },
 ] as const;
 
+const legalNav = [
+  { to: "/terms", label: "Terms of Use" },
+  { to: "/privacy", label: "Privacy Policy" },
+] as const;
+
 export function Shell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
@@ -62,41 +67,62 @@ export function Shell({ children }: { children: ReactNode }) {
       </header>
       <main className="mx-auto w-full max-w-5xl flex-1 px-5 py-10">{children}</main>
       <footer className="border-t border-line">
-        <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            Official site · {brand.domain}. If it is not linked here, it is not
-            us.
-          </p>
-          <p>
-            Having issues? Email{" "}
-            <a
-              href={`mailto:${contactEmail}`}
-              className="font-semibold break-all text-fg hover:text-neon"
-            >
-              {contactEmail}
-            </a>
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={socials.discord}
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold text-fg hover:text-neon"
-            >
-              Discord
-            </a>
-            {socials.x.map((account) => (
+        <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-5 py-8 text-sm text-muted">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              Official site · {brand.domain}. If it is not linked here, it is not
+              us.
+            </p>
+            <p>
+              Having issues? Email{" "}
               <a
-                key={account.handle}
-                href={account.url}
+                href={`mailto:${contactEmail}`}
+                className="font-semibold break-all text-fg hover:text-neon"
+              >
+                {contactEmail}
+              </a>
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={socials.discord}
                 target="_blank"
                 rel="noreferrer"
                 className="font-semibold text-fg hover:text-neon"
               >
-                X / {account.handle}
+                Discord
               </a>
-            ))}
+              {socials.x.map((account) => (
+                <a
+                  key={account.handle}
+                  href={account.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-fg hover:text-neon"
+                >
+                  X / {account.handle}
+                </a>
+              ))}
+            </div>
           </div>
+          <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-1">
+            {legalNav.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                activeOptions={{ exact: true }}
+                activeProps={{
+                  className:
+                    "inline-flex min-h-11 items-center font-semibold text-neon",
+                }}
+                inactiveProps={{
+                  className:
+                    "inline-flex min-h-11 items-center font-semibold text-fg hover:text-neon",
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </footer>
     </div>
