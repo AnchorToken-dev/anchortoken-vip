@@ -50,7 +50,7 @@ export const tools = [
 ] as const;
 
 export const socials = {
-  discord: "https://discord.gg/UdJPfnHQ",
+  discord: "https://discord.gg/4aap5E9zFz",
   x: [
     { handle: "@Draco4226", url: "https://x.com/Draco4226" },
     { handle: "@Memecoindev46", url: "https://x.com/Memecoindev46" },
